@@ -67,7 +67,7 @@
         <div align="center">
             <a href="https://ton.org/"><img width="48" src="./assets/tapps.png" alt="logo of telegram web apps"></a>
         </div>
-        <h1>Modals</h1>
+        <!-- <h1>Modals</h1>
         <button onclick="Telegram.WebApp.showAlert('Hello World!');">Launch Alert</button>
         <button onclick="showPopup();">Launch Popup</button>
 
@@ -82,19 +82,27 @@
             <li>
                 <a href="javascript:Telegram.WebApp.openLink('https://telegra.ph/api',{try_instant_view:true});">Open link inside Telegram webview</a>
             </li>
-        </ul>
+        </ul> -->
 
-        <h1>Buttons</h1>
+        <!-- <h1>Buttons</h1>
         <button onclick="Telegram.WebApp.expand();">Expand Webview</button>
-        <button onclick="toggleMainButton();">Toggle Main Button</button>
+        <button onclick="toggleMainButton();">Toggle Main Button</button> -->
+        <p>Здесь текст оферты. Требуется загружать с сайта.</p>
+        <!-- <button id="AKN" onclick="Telegram.WebApp.expand();">Принять</button>
+        <button id="MIS" onclick="toggleMainButton();">Отказаться</button> -->
     </main>
-    <div id="viewport"></div>
+    <!-- <div id="viewport"></div>
     <div id="viewport-params-size"></div>
-    <div id="viewport-params-expand"></div>
+    <div id="viewport-params-expand"></div> -->
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         // Init TWA
         Telegram.WebApp.ready();
+        
+        // Event occurs whenever button is pressed sending a message to Telegram app.
+        Telegram.WebApp.MainButton.onClick(function () {
+            Telegram.WebApp.sendData('Принять')
+        });
 
         // Event occurs whenever theme settings are changed in the user's Telegram app (including switching to night mode).
         Telegram.WebApp.onEvent('themeChanged', function() {
@@ -105,9 +113,9 @@
         Telegram.WebApp.MainButton.setParams({
             text: 'Main Button'
         });
-        Telegram.WebApp.MainButton.onClick(function () {
-            Telegram.WebApp.showAlert('Main Button was clicked')
-        });	
+        //Telegram.WebApp.MainButton.onClick(function () {
+        //    Telegram.WebApp.showAlert('Main Button was clicked')
+        //});	
         Telegram.WebApp.MainButton.show();
 
         // Function to call showPopup API
