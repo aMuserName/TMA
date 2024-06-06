@@ -100,8 +100,12 @@
         Telegram.WebApp.ready();
         
         // Event occurs whenever button is pressed sending a message to Telegram app.
-        Telegram.WebApp.MainButton.onClick(function () {
-            Telegram.WebApp.sendData('Принять')
+        // Telegram.WebApp.MainButton.onClick(function () {
+        //     Telegram.WebApp.sendData('Принять')
+        // });
+        Telegram.WebApp.onEvent('mainButtonClicked', function(){
+            Telegram.WebApp.sendData("Принять"); 
+            //при клике на основную кнопку отправляем данные в строковом виде
         });
 
         // Event occurs whenever theme settings are changed in the user's Telegram app (including switching to night mode).
