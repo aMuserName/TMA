@@ -104,7 +104,7 @@
         //     Telegram.WebApp.sendData('Принять')
         // });
         Telegram.WebApp.onEvent('mainButtonClicked', function(){
-            Telegram.WebApp.sendData("Принять"); 
+            Telegram.WebApp.SentWebAppMessage("Принять"); 
             //при клике на основную кнопку отправляем данные в строковом виде
         });
 
@@ -115,7 +115,7 @@
 
         // Show main button
         Telegram.WebApp.MainButton.setParams({
-            text: 'Main Button'
+            text: 'Принять'
         });
         //Telegram.WebApp.MainButton.onClick(function () {
         //    Telegram.WebApp.showAlert('Main Button was clicked')
