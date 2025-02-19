@@ -47,7 +47,7 @@
 
         // Fetch previous messages when the app loads
         async function fetchPreviousMessages() {
-            const response = await fetch("http://147.45.253.53:18900/messages");
+            const response = await fetch(`http://147.45.253.53:18900/messages/${ticketId}`);
             const data = await response.json();
             data.messages.forEach(message => {
                 const messageElement = document.createElement("div");
