@@ -58,7 +58,7 @@
         }
 
         // Connect to WebSocket
-        const ws = new WebSocket("ws://147.45.253.53:18900/ws/");
+        const ws = new WebSocket(`ws://147.45.253.53:18900/ws/${ticketId}`);
 
         // Handle incoming messages
         ws.onmessage = (event) => {
