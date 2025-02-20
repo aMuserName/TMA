@@ -33,12 +33,12 @@
 
     <script>
         // Initialize Telegram Web App
-        const tg = window.Telegram.WebApp;
+        //const tg = window.Telegram.WebApp;
 
         // Expand the web app to full screen
-        tg.expand();
+        //tg.expand();
         
-        const ticketId = tg.initDataUnsafe.ticket_id;
+        const ticketId = 12345567//tg.initDataUnsafe.ticket_id;
         console.log("Incoming ticket:", ticketId);
 
         const messagesDiv = document.getElementById("messages");
@@ -76,7 +76,8 @@
         sendButton.onclick = () => {
             const message = messageInput.value;
             if (message) {
-                ws.send(JSON.stringify({ text: message, user: tg.initDataUnsafe.user , ticket_id: ticketId}));
+                ws.send(JSON.stringify({ text: message, user: "test_user"//tg.initDataUnsafe.user 
+                    , ticket_id: ticketId}));
                 messageInput.value = ""; // Clear input
             }
         };
