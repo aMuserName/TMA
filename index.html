@@ -76,8 +76,7 @@
         sendButton.onclick = () => {
             const message = messageInput.value;
             if (message) {
-                ws.send(JSON.stringify({ text: message, user: "test_user"//tg.initDataUnsafe.user 
-                    , ticket_id: ticketId}));
+                ws.send(JSON.stringify({ text: message, user: "test_user", ticket_id: ticketId})); //tg.initDataUnsafe.user
                 messageInput.value = ""; // Clear input
             }
         };
